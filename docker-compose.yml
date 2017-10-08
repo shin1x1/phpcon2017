@@ -1,0 +1,11 @@
+version: '2'
+services:
+  php:
+    image: shin1x1/docker-php71-apache-postgresql-dev
+    volumes:
+      - ./:/var/www/html
+      - ./docker/web/php.ini:/usr/local/etc/php/php.ini
+      - ./docker/web/.bashrc:/root/.bashrc
+    working_dir: /var/www/html
+    ports:
+      - "8000:80"
